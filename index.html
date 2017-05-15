@@ -2,12 +2,104 @@
 <html>
 	<head>
 		<meta lang="en-us" charset="UTF-8">
-		<script type="text/javascript" src="assets/javascript/game.js" ></script>
+		<title>Hangman</title>
+		
+		<link rel="shortcut icon" href="assets/images/favicon.ico" type="image/ico" >
 		<link rel="stylesheet" type="text/css" href="assets/css/reset.css" >
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css" >
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+		
+				
 	</head>
 
-	<body>
+	<body>	
+		<div id= "header" class="navbar navbar-default">
+		<img src="assets/images/tumbleweed.gif" width="40%" style="float: left; position: relative;">
+			<h1 class="header_text"> Hangman</h1>
+		</div>
+
+
+
+		<div id="wrapper">
+
+			<div class="row">
+				<div class="courthouse" class="col-md-4">
+				</div>
+
+				<div id="game" class="col-md-4">
+					<div id="hangman" style="margin-left: 15px; margin-top: 15px;">
+						<h3>
+							Lives: <b id="lives"> 4 </b>
+							<br>
+							<b id="Letters"> 0 </b> Letters in the word.
+						</h3>
+					</div>
+					<br>
+					<div>
+						<h1 id="word">
+							_,_,_,_
+						</h1>
+					</div>
+
+
+					<div id="letters">
+  						<p>
+  							<h1>
+    							<a id="a" href="">A</a> 
+    							<a id="b" href="">B</a> 
+    							<a id="c" href="">C</a> 
+    							<a id="d" href="">D</a> 
+    							<a id="e" href="">E</a> 
+    							<a id="f" href="">F</a> 
+    							<a id="g" href="">G </a> 
+    							<a id="h" href="">H</a> 
+    							<a id="i" href="">I</a>
+    							<a id="j" href="">J</a> 
+    							<a id="k" href="">K</a> 
+    							<a id="l" href="">L</a> 
+    							<a id="m" href="">M</a> 
+    							<a id="n" href="">N</a> 
+    							<a id="o" href="">O</a> 
+    							<a id="p" href="">P </a> 
+    							<a id="q" href="">Q</a> 
+    							<a id="r" href="">R</a>
+   								<a id="s" href="">S</a> 
+   								<a id="t" href="">T</a> 
+   								<a id="u" href="">U</a> 
+   								<a id="v" href="">V</a> 
+   								<a id="w" href="">W</a> 
+   								<a id="x" href="">X</a> 
+   								<a id="y" href="">Y </a> 
+   								<a id="z" href="">Z</a>
+  							</h1>
+ 						 </p>
+					</div>
+
+				</div>
+
+
+
+			
+			</div>
+		</div>
+
+
+	
+		<div id="footer">
+
+			<img src="assets/images/cowboy_standing.jpg" style="height: 75px; width: 75px; float: left; margin-left: -23.5px; margin-bottom: 5px;">
+			&#169; Copyright 2017
+			<img src="assets/images/cowboy_chair.png" style="height: 75px; width: 75px; float: right;">
+		</div>
+
+		<script type="text/javascript" src="assets/javascript/jquerry.min.js"></script>
+		<script type="text/javascript" src="assets/javascript/wordbank.js" ></script>
+		<script type="text/javascript" src="assets/javascript/main.js" ></script>
+		<script type="text/javascript" src="assets/javascript/clickletter.js" ></script>
+		<script type="text/javascript" src="assets/javascript/bootstrap.min.js"></script>
+
 
 	</body>
 </html>

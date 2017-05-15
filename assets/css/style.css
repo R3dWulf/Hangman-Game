@@ -1,0 +1,89 @@
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	margin: 0 0 100px;
+	/*  bottom margin leaves room for footer*/
+	font-family: 'Old Standard TT', serif;
+	font-weight: bold;
+	background-color: #FFF2DF;
+}
+
+p {
+	text-align: center;
+}
+
+#header {
+	width: 100%;
+	float: left;
+	position: relative;
+	background-color: #a26c3a;
+	clear: both;
+
+}
+
+.header_text {
+	font-size: 40px;
+	font-weight: bold;
+	text-align: left;
+	color: #963435;
+
+}
+
+#wrapper {
+
+	}
+
+
+.courthouse {
+	position: relative;
+	float: left;
+	background-image: url("../images/courthouse.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 400px;
+	height: 400px;
+	margin-left: 12%;
+	margin-right: 1%;
+	border-radius: 5%;
+
+}
+
+#game {
+	position: relative;
+	float: left;
+	/*border-style: dashed;*/
+	/*border-color: #a26c3a;*/
+	/*border-width: 2px;*/
+	background-image: url("../images/cowboy-rope.png");
+	width: 460px;
+	height: 520px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 40px 35px 40px 45px;
+}
+
+
+/*button {
+	background-image: url("../images/rope.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 40px;
+	height: 40px;
+}*/
+
+#footer {
+	background-color: #a26c3a;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	position: absolute;
+	height: 75px;
+	line-height: 75px;
+	overflow: hidden; 
+	margin: 0 auto;
+	margin-top: 25px;
+	text-align: center;
+}
