@@ -1,7 +1,7 @@
 $(function(){
 	$("#a").click(function(event) {
 			event.preventDefault();
-			Main.UpdateLetter("a");
+			Game.UpdateLetter("a");
 	});
 	}
 );
@@ -9,7 +9,7 @@ $(function(){
 $(function(){
 	$("#b").click(function(event) {
 			event.preventDefault();
-			Main.UpdateLetter("b");
+			Game.UpdateLetter("b");
 	});
 	}
 );
@@ -17,7 +17,7 @@ $(function(){
 $(function(){
 	$("#c").click(function(event) {
 			event.preventDefault();
-			Main.UpdateLetter("c");
+			Game.UpdateLetter("c");
 	});
 	}
 );
@@ -25,7 +25,7 @@ $(function(){
 $(function(){
 	$("#d").click(function(event) {
 			event.preventDefault();
-			Main.UpdateLetter("d");
+			Game.UpdateLetter("d");
 	});
 	}
 );
@@ -33,7 +33,7 @@ $(function(){
 $(function(){
 	$("#e").click(function(event) {
 			event.preventDefault();
-			Main.UpdateLetter("e");
+			Game.UpdateLetter("e");
 	});
 	}
 );
@@ -41,7 +41,7 @@ $(function(){
 $(function(){
 	$("#f").click(function(event) {
 			event.preventDefault();
-			Main.UpdateLetter("f");
+			Game.UpdateLetter("f");
 	});
 	}
 );
@@ -49,7 +49,7 @@ $(function(){
 $(function(){
 	$("#g").click(function(event) {
 			event.preventDefault();
-			Main.UpdateLetter("g");
+			Game.UpdateLetter("g");
 	});
 	}
 );
@@ -57,7 +57,7 @@ $(function(){
 $(function(){
 	$("#h").click(function(event) {
 			event.preventDefault();
-			Main.UpdateLetter("h");
+			Game.UpdateLetter("h");
 	});
 	}
 );
@@ -65,7 +65,7 @@ $(function(){
 $(function(){
 	$("#i").click(function(event) {
 			event.preventDefault();
-			Main.UpdateLetter("i");
+			Game.UpdateLetter("i");
 	});
 	}
 );
@@ -73,7 +73,7 @@ $(function(){
 $(function(){
 	$("#j").click(function(event) {
 			event.preventDefault();
-			Main.UpdateLetter("j");
+			Game.UpdateLetter("j");
 	});
 	}
 );
@@ -81,13 +81,13 @@ $(function(){
 $(function(){
 	$("#k").click(function(event) {
 			event.preventDefault();
-			Main.UpdateLetter("k");
+			Game.UpdateLetter("k");
 	});
 	}
 );$(function(){
 	$("#l").click(function(event) {
 			event.preventDefault();
-			Main.UpdateLetter("l");
+			Game.UpdateLetter("l");
 	});
 	}
 );
@@ -95,7 +95,7 @@ $(function(){
 $(function(){
 	$("#m").click(function(event) {
 			event.preventDefault();
-			Main.UpdateLetter("m");
+			Game.UpdateLetter("m");
 	});
 	}
 );
@@ -103,7 +103,7 @@ $(function(){
 $(function(){
 	$("#n").click(function(event) {
 			event.preventDefault();
-			Main.UpdateLetter("n");
+			Game.UpdateLetter("n");
 	});
 	}
 );
@@ -111,7 +111,7 @@ $(function(){
 $(function(){
 	$("#o").click(function(event) {
 			event.preventDefault();
-			Main.UpdateLetter("o");
+			Game.UpdateLetter("o");
 	});
 	}
 );
@@ -119,7 +119,7 @@ $(function(){
 $(function(){
 	$("#p").click(function(event) {
 			event.preventDefault();
-			Main.UpdateLetter("p");
+			Game.UpdateLetter("p");
 	});
 	}
 );
@@ -127,7 +127,7 @@ $(function(){
 $(function(){
 	$("#q").click(function(event) {
 			event.preventDefault();
-			Main.UpdateLetter("q");
+			Game.UpdateLetter("q");
 	});
 	}
 );
@@ -135,7 +135,7 @@ $(function(){
 $(function(){
 	$("#r").click(function(event) {
 			event.preventDefault();
-			Main.UpdateLetter("r");
+			Game.UpdateLetter("r");
 	});
 	}
 );
@@ -143,7 +143,7 @@ $(function(){
 $(function(){
 	$("#s").click(function(event) {
 			event.preventDefault();
-			Main.UpdateLetter("s");
+			Game.UpdateLetter("s");
 	});
 	}
 );
@@ -151,7 +151,7 @@ $(function(){
 $(function(){
 	$("#t").click(function(event) {
 			event.preventDefault();
-			Main.UpdateLetter("t");
+			Game.UpdateLetter("t");
 	});
 	}
 );
@@ -159,7 +159,7 @@ $(function(){
 $(function(){
 	$("#u").click(function(event) {
 			event.preventDefault();
-			Main.UpdateLetter("u");
+			Game.UpdateLetter("u");
 	});
 	}
 );
@@ -167,13 +167,13 @@ $(function(){
 $(function(){
 	$("#v").click(function(event) {
 			event.preventDefault();
-			Main.UpdateLetter("v");
+			Game.UpdateLetter("v");
 	});
 	}
 );$(function(){
 	$("#w").click(function(event) {
 			event.preventDefault();
-			Main.UpdateLetter("w");
+			Game.UpdateLetter("w");
 	});
 	}
 );
@@ -181,7 +181,7 @@ $(function(){
 $(function(){
 	$("#x").click(function(event) {
 			event.preventDefault();
-			Main.UpdateLetter("x");
+			Game.UpdateLetter("x");
 	});
 	}
 );
@@ -189,7 +189,7 @@ $(function(){
 $(function(){
 	$("#y").click(function(event) {
 			event.preventDefault();
-			Main.UpdateLetter("y");
+			Game.UpdateLetter("y");
 	});
 	}
 );
@@ -197,7 +197,7 @@ $(function(){
 $(function(){
 	$("#z").click(function(event) {
 			event.preventDefault();
-			Main.UpdateLetter("z");
+			Game.UpdateLetter("z");
 	});
 	}
 );
