@@ -85,7 +85,7 @@ Game.UpdateLetter = function(letter){
 		//Alert player they lost
 		alert("You Are Out Of Lives, Reloading!");
 		//Reload screen
-		window.location.reload();
+		// window.location.reload();
 	}
 
 	//Words match and life counter is not 0, player wins

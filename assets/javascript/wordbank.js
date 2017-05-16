@@ -34,7 +34,7 @@ Words.List[25] = "tombstone";
 Words.List[26] = "bandit";
 Words.List[27] = "buffalo";
 Words.List[28] = "gunslinger";
-Words.List[29] = "Lawmen";
+Words.List[29] = "lawmen";
 
 Words.List[30] = "rope";
 Words.List[31] = "prairie";
