@@ -8,17 +8,22 @@ Game.WordArray = [];
 Game.WordUArray = [];
 
 //Set the life counter
-Game.Lives = 4;
+Game.Lives = 7;
+
 
 //The number of words in the word bank to be used in Math.floor
 //using length did not work
-Game.NumberInWordbank = 40; // including zero
+Game.NumberInWordbank = 40; 
 
 //Make sure the word bank is working  if not console will throw undefined error
 Game.Word = "test"; 
 
 //Create empty string to store underlined word
 Game.WordU = "";
+
+
+//Create index that will allow words to be displayed back to back to allow for a score to be kept
+// Game.Index = 0;
 
 //<------functions go here------------>
 
@@ -27,9 +32,10 @@ Game.PullWord = function(){
 	Game.Word = Words.List[(Math.floor(Math.random() * Game.NumberInWordbank))];
 }
 
+
 //loop through the pulled word and replace the letters with _
 Game.SetUnderline = function(){
-	//Get a random word with the PullWord function
+	//Get the random word with the PullWord function
 	Game.PullWord();
 	//Use a for loop that will loop through the letters and replace them with underscores.
 	for(i=0; i < Game.Word.length; i++){
@@ -91,9 +97,10 @@ Game.UpdateLetter = function(letter){
 	}
 }
 
-
 //Pull random word on screen load to start the Game
 Game.PullWord();
 
 //Hide randomly pulled word
 Game.SetUnderline();
+
+
