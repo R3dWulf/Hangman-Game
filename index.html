@@ -29,38 +29,23 @@
 				</div>
 
 				<div id="game" class="col-md-4">
-					<div id="hangman" style="margin-left: 15px; margin-top: 15px;">
-						<p style="color: #963435; font-weight: bold;">
-							Press any key to get started!
-						</p>
-
-						<h3>
-							Lives: 
-							<b id="lives"> 
-								7 
-							</b>
-							<br>
-							<b id="Letters"> 
-								0 
-							</b> Letters in the word.
-						</h3>
+					<div id="hangman" style="margin-left: 15px; margin-top: 15px;">					
+						<div>
+							<p style="color: #963435; font-weight: bold;">
+								Press any key to get started!
+							</p>
+							Lives Left: <span id="numGuesses">0</span>
+							<!--Span tags will hold the counters-->
+							<h2 id="wordToGuess">_ _ _ _ _ _ _ _</h2> 
+							Wrong Guesses: <span id="wrongGuesses">0</span>
+							<br>												
+							Win Counter: <span id="winCounter">0</span>
+							Loss Counter: <span id="lossCounter">0</span>
+						</div>
+					
 					</div>
-					<br>
-					<div>
-						<h1 id="word">
-							_ _ _ _
-						</h1>
-					</div>
-
 				</div>
-
-
-
-			
 			</div>
-		</div>
-
-
 	
 		<div id="footer">
 
@@ -69,11 +54,7 @@
 			<img src="assets/images/cowboy_chair.png" style="height: 75px; width: 75px; float: right;">
 		</div>
 
-	
-		<script type="text/javascript" src="assets/javascript/wordbank.js" ></script>
 		<script type="text/javascript" src="assets/javascript/game.js" ></script>
-		<script type="text/javascript" src="assets/javascript/key_press.js" ></script>
-		<script type="text/javascript" src="assets/javascript/bootstrap.min.js"></script>
 
 
 	</body>

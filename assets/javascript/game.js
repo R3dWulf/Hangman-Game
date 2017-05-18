@@ -1,106 +1,132 @@
-//Store the Game in an object
-Game = {};
+//Test to see if the JS file is working
+//test is okay
+//alert("Test");
 
-//Create empty array to store pulled word from word list
-Game.WordArray = [];
-
-//Create empty array to store the pulled word that has been replaced with underscores
-Game.WordUArray = [];
-
-//Set the life counter
-Game.Lives = 7;
-
-
-//The number of words in the word bank to be used in Math.floor
-//using length did not work
-Game.NumberInWordbank = 40; 
-
-//Make sure the word bank is working  if not console will throw undefined error
-Game.Word = "test"; 
-
-//Create empty string to store underlined word
-Game.WordU = "";
+// GLOBAL VARIABLES
+//=============================================================================================
+// Arrays and vaiables for holding data
+// array needs to be lower case becuase button input is lowercase
+var wordOptions = ["cowboy", "boots", "train", "horse", "outlaw", "marshal", "whiskey"]; 
+// hold the chosen word
+var selectedWord = "";
+//Determine what letters are in the world
+var lettersInWord= [];
+//number of blanks
+var numBlanks = 0;
+//array to hold blanks and successful guesses
+var blanksAndSuccesses = []; // example j _ _ _ _
+var winCount = 0;
+var lossCount = 0;
+var guessesLeft = 9;
 
 
-//Create index that will allow words to be displayed back to back to allow for a score to be kept
-// Game.Index = 0;
+// FUNCTIONS 
+//=============================================================================================
 
-//<------functions go here------------>
+function startGame () {
+	selectedWord = wordOptions[Math.floor(Math.random() * wordOptions.length)];
+	lettersInWord = selectedWord.split("");
+	numBlanks = lettersInWord.length;
 
-//Create a function that will pull a random word from the word bank
-Game.PullWord = function(){
-	Game.Word = Words.List[(Math.floor(Math.random() * Game.NumberInWordbank))];
-}
+	// Reset on new game
+	guessesLeft = 9;
+	wrongLetters = [];
+	blanksAndSuccesses = [];
 
-
-//loop through the pulled word and replace the letters with _
-Game.SetUnderline = function(){
-	//Get the random word with the PullWord function
-	Game.PullWord();
-	//Use a for loop that will loop through the letters and replace them with underscores.
-	for(i=0; i < Game.Word.length; i++){
-		Game.WordArray[i] = Game.Word.charAt(i);
-		Game.WordUArray[i] = "_ ";
+	// Populate blanks and and successes with right number of blanks
+	for (var i = 0; i < numBlanks; i++) {
+		blanksAndSuccesses.push("_");
 	}
-	//Join underscore word and array into a string
-	Game.WordU = Game.WordUArray.join("");
-	//Display the underscored word onscreen
-	document.getElementById("word").innerHTML = Game.WordU;
-	//Display on screen how many character are in the word
-	document.getElementById("Letters").innerHTML = Game.Word.length;
+
+	// Change HTML to reflect round conditions
+	document.getElementById("wordToGuess").innerHTML = blanksAndSuccesses.join(" "); //.join removes the default comma seperators
+	document.getElementById("numGuesses").innerHTML = guessesLeft;
+	document.getElementById("winCounter").innerHTML = winCount;
+	document.getElementById("lossCounter").innerHTML = lossCount;
+
+	//test
+	console.log(selectedWord);
+	console.log(lettersInWord);
+	console.log(numBlanks);
+	console.log(blanksAndSuccesses);
 }
 
-//Create the function that will unhide the word and update the Game
-Game.UpdateLetter = function(letter){
-	//Set an integer to adjust so the Game will know the player did something
-	Game.Changes = 0;
-	//Create a for loop that changes the integer if an _ becomes a letter
-	for(i=0; i < Game.Word.length; i++){
-		Game.WordArray[i] = Game.Word.charAt(i);
-		if(Game.Word.charAt(i) == letter){
-		Game.WordUArray[i] = letter;
-		Game.Changes += 1;
+function checkLetters(letter){
+	// Check if letter exist in code at all
+
+	// test to make sure letter is called
+	//alert(letter); 
+	var isLetterInWord = false;
+	for (var i = 0; i < numBlanks; i++){
+		if(selectedWord[i] == letter){
+			isLetterInWord = true;
+			//test to make sure the for loop is working
+			//alert("Letter Found");
 		}
 	}
 
-	//If an _ does not change, decrease life counter
-	if(Game.Changes < 1){
-		Game.Lives -= 1;
-		//Decrease life counter on screen
-		document.getElementById("lives").innerHTML = Game.Lives;
+	// Check where is the word the letter exist and populate out blanksAndSuccesses
+	if(isLetterInWord){
+		for(var i =0; i < numBlanks; i++ ){
+			if(selectedWord[i] == letter) {
+				blanksAndSuccesses[i] = letter;
+			}
+		}
+	} 
+
+	// Letter was not found
+	else { 
+		wrongLetters.push(letter);
+		guessesLeft--;
 	}
 
+	//Testing and debugging
+	console.log(blanksAndSuccesses);
+}
 
-	Game.WordU = Game.WordUArray.join("");
-	document.getElementById("word").innerHTML = Game.WordU;
-	
-	//Setup win/lose conditions by matching the arrays
-	Game.Word1 = Game.WordArray.join("");
-	Game.Word2 = Game.WordUArray.join("");
-	
-	//If life counter = 0, player loses
-	if(Game.Lives < 1){
-		//Display the correct word before screen reloads
-		document.getElementById("word").innerHTML = Game.Word1;
-		//Alert player they lost
-		alert("You Are Out Of Lives, Reloading!");
-		//Reload screen
-		// window.location.reload();
+function roundComplete(){
+	console.log("Win Count: " + winCount + " | Loss Count: " + lossCount + " | Guesses Left: " + guessesLeft );
+
+	// Update HTML to reflect current information
+	document.getElementById("numGuesses").innerHTML = guessesLeft; 
+	document.getElementById("wordToGuess").innerHTML = blanksAndSuccesses.join(" "); // .toString() inputs commas
+	document.getElementById("wrongGuesses").innerHTML = wrongLetters.join(" ");
+
+	// Check if user won
+	if (lettersInWord.toString() == blanksAndSuccesses.toString()){
+		winCount++;
+		alert("You Won!");
+
+		// Update win counter in HTML 
+		document.getElementById("winCounter").innerHTML = winCount;
+
+		// Restart game now with score updated.
+		startGame();
 	}
 
-	//Words match and life counter is not 0, player wins
-	if(Game.Word1 === Game.Word2){
-		//Alert player they won
-		alert("You Won! Loading For New Word!");
-		//Reload screen for next Game
-		window.location.reload();
+	// Check if user lost
+	else if(guessesLeft == 0) {
+		lossCount++;
+		alert("You lost!");
+
+		// Update the lost counter in HTML
+		document.getElementById("lossCounter").innerHTML = lossCount;
+		startGame();
 	}
 }
 
-//Pull random word on screen load to start the Game
-Game.PullWord();
+// MAIN PROCESS
+//=============================================================================================
 
-//Hide randomly pulled word
-Game.SetUnderline();
+// initiates the code for the start time
+startGame();
 
+// Register key clicks
+document.onkeyup = function(event) {
+	var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase(); //use event.keyCode if String.from does not work!
+	checkLetters(letterGuessed);
+	roundComplete();
+	//Testing key event
+	console.log(letterGuessed);
 
+}
