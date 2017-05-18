@@ -6,7 +6,8 @@
 //=============================================================================================
 // Arrays and vaiables for holding data
 // array needs to be lower case becuase button input is lowercase
-var wordOptions = ["cowboy", "boots", "train", "horse", "outlaw", "marshal", "whiskey"]; 
+var wordOptions = ["cowboy", "boots", "train", "horse", "outlaw", "marshal", "whiskey", "silver"];
+var images = [] 
 // hold the chosen word
 var selectedWord = "";
 //Determine what letters are in the world
@@ -18,7 +19,8 @@ var blanksAndSuccesses = []; // example j _ _ _ _
 var winCount = 0;
 var lossCount = 0;
 var guessesLeft = 9;
-
+var soundWon = new Audio("yeehaw.mp3");
+var soundLost = new Audio("boo.mp3");
 
 // FUNCTIONS 
 //=============================================================================================
@@ -49,6 +51,12 @@ function startGame () {
 	console.log(lettersInWord);
 	console.log(numBlanks);
 	console.log(blanksAndSuccesses);
+
+	// Register difficulty 
+	document.getElementById("hard").onclick = function() {
+	guessesLeft = 3;
+	console.log(guessesLeft);
+}
 }
 
 function checkLetters(letter){
@@ -96,6 +104,7 @@ function roundComplete(){
 	if (lettersInWord.toString() == blanksAndSuccesses.toString()){
 		winCount++;
 		alert("You Won!");
+		soundWon.play();
 
 		// Update win counter in HTML 
 		document.getElementById("winCounter").innerHTML = winCount;
@@ -108,6 +117,7 @@ function roundComplete(){
 	else if(guessesLeft == 0) {
 		lossCount++;
 		alert("You lost!");
+		console.log(soundLost.play());
 
 		// Update the lost counter in HTML
 		document.getElementById("lossCounter").innerHTML = lossCount;
@@ -130,3 +140,4 @@ document.onkeyup = function(event) {
 	console.log(letterGuessed);
 
 }
+
